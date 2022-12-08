@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Tab } from "@headlessui/react";
 import { BinaryConverter } from "../binaryComponents/binaryConverter";
-import { BinaryAdddition } from "../binaryComponents/BinaryAddition";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
