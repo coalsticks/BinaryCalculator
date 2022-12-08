@@ -56,7 +56,6 @@ export const BinaryConverter = () => {
 
   const handleConversion = () => {
     if (isInitialState) {
-      console.log("Brow");
       if (binaryRef.current) {
         if (isValidBinaryInput(binaryRef.current.value)) {
           setInvalidBinaryError(false);
@@ -78,18 +77,30 @@ export const BinaryConverter = () => {
   };
 
   const handleSwap = () => {
+    // setNull(binaryRef.current);
     setInvalidBinaryError(false);
     setInvalidDecimalError(false);
     setResult(null);
     setInitialState((prev) => !prev);
+
+    if (binaryRef.current) {
+      binaryRef.current.value = "";
+    } else if (decimalRef.current) {
+      decimalRef.current.value = "";
+    }
   };
 
   return (
-    <div className=" ">
+    <div>
+      {/* SWAP ARROW */}
       {isInitialState ? binaryInput(true) : decimalInput(true)}
       <div className="flex justify-center items-center w-full">
         <button
-          onClick={() => handleSwap()}
+          onClick={() => {
+            console.log(decimalRef);
+
+            handleSwap();
+          }}
           type="button"
           className="text-white bg-violet-500 hover:bg-violet-700 focus:ring-4 focus:outline-none focus:ring-violet-700 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
@@ -103,7 +114,7 @@ export const BinaryConverter = () => {
         <button
           onClick={() => handleConversion()}
           type="button"
-          className=" text-white bg-rose-400 focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+          className="text-white bg-rose-400 focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
         >
           Convert
         </button>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Tab } from "@headlessui/react";
 import { BinaryConverter } from "../binaryComponents/binaryConverter";
+import { BinaryAdddition } from "../binaryComponents/BinaryAddition";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -9,9 +10,7 @@ function classNames(...classes: string[]) {
 export default function CalculatorSelectionMenu() {
   let [categories] = useState({
     "Binary Converter": <BinaryConverter />,
-    // "Binary Operations": [
-
-    // ],
+    // "Binary Addition": <BinaryAdddition />,
     // "2's Complement": [
     // ],
   });

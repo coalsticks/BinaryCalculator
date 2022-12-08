@@ -56,7 +56,7 @@ export const InputSelection = ({
                     ? "bg-gray-50 border-gray-300 text-gray-900"
                     : "bg-red-50 border-red-500 text-red-900"
                 } border   text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500`}
-                placeholder="10010010"
+                placeholder={placeholder}
               />
             </div>
 
@@ -81,9 +81,9 @@ export const InputSelection = ({
               id="input-group-1"
               className={`${
                 !result
-                  ? "bg-gray-200 border-gray-300 text-gray-900"
-                  : "bg-green-50  border-green-500 text-green-900 placeholder:text-green-900"
-              } border   text-sm rounded-lg  focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500`}
+                  ? "bg-gray-200 border-gray-300 text-gray-900 "
+                  : "bg-green-50  border-green-500 text-green-900 placeholder:text-green-900 "
+              } border text-sm rounded-lg  focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500`}
               placeholder={result ? result.toString() : placeholder}
               disabled
             />
